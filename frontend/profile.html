@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - SubsVault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="grid-overlay"></div>
+        <div class="gradient-orb"></div>
+        <div class="gradient-orb"></div>
+        <div class="stars" id="stars"></div>
+        <div class="shapes" id="shapes"></div>
+        <div id="meteors"></div>
+    </div>
+
+    <div class="dashboard-container">
+        <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+        
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar-large">JD</div>
+                <h2>John Doe</h2>
+                <p>john.doe@example.com</p>
+            </div>
+
+            <form action="dashboard.html">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" value="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" value="john.doe@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="currency">Preferred Currency</label>
+                    <select id="currency">
+                        <option value="usd" selected>USD - US Dollar</option>
+                        <option value="eur">EUR - Euro</option>
+                        <option value="gbp">GBP - British Pound</option>
+                        <option value="inr">INR - Indian Rupee</option>
+                        <option value="cad">CAD - Canadian Dollar</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notifications">Email Notifications</label>
+                    <select id="notifications">
+                        <option value="all" selected>All Notifications</option>
+                        <option value="important">Important Only</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="reminderDays">Renewal Reminder (Days Before)</label>
+                    <select id="reminderDays">
+                        <option value="1">1 Day</option>
+                        <option value="3">3 Days</option>
+                        <option value="5" selected>5 Days</option>
+                        <option value="7">7 Days</option>
+                        <option value="14">14 Days</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Save Profile</button>
+            </form>
+
+            <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="font-family: 'Orbitron', sans-serif; font-size: 20px; margin-bottom: 20px;">Change Password</h3>
+                
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" placeholder="Enter current password">
+                </div>
+
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" placeholder="Enter new password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmNewPassword">Confirm New Password</label>
+                    <input type="password" id="confirmNewPassword" placeholder="Confirm new password">
+                </div>
+
+                <button type="button" class="btn btn-secondary">Update Password</button>
+            </div>
+
+            <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="font-family: 'Orbitron', sans-serif; font-size: 20px; margin-bottom: 15px; color: var(--primary-red);">Danger Zone</h3>
+                <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 20px;">Once you delete your account, there is no going back. Please be certain.</p>
+                <button type="button" class="btn-delete" style="width: 100%; padding: 12px;" onclick="if(confirm('Are you absolutely sure you want to delete your account? This action cannot be undone.')) alert('Account deletion requested. You will receive a confirmation email.')">Delete Account</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

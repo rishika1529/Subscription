@@ -1,48 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SubsVault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<div class="dashboard">
-
-    <div class="sidebar">
-        <h2>SubsVault</h2>
-        <ul>
-            <li>Dashboard</li>
-            <li>Subscriptions</li>
-            <li>Analytics</li>
-        </ul>
+    <div class="bg-animation">
+        <div class="grid-overlay"></div>
+        <div class="gradient-orb"></div>
+        <div class="gradient-orb"></div>
+        <div class="stars" id="stars"></div>
+        <div class="shapes" id="shapes"></div>
+        <div id="meteors"></div>
     </div>
 
-    <div class="main">
-
-        <div class="navbar">
-            <h2>Dashboard</h2>
-            <button class="logout" onclick="logout()">Logout</button>
-        </div>
-
-        <div class="cards">
-            <div class="card-box">
-                <h4>Monthly</h4>
-                <p>$247</p>
-            </div>
-            <div class="card-box">
-                <h4>Yearly</h4>
-                <p>$2964</p>
-            </div>
-            <div class="card-box">
-                <h4>Active</h4>
-                <p>12</p>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Dashboard</h1>
+            <div class="user-section">
+                <a href="profile.html" class="user-profile">
+                    <div class="user-avatar">JD</div>
+                    <span style="font-weight: 600; font-size: 15px;">John Doe</span>
+                </a>
+                <a href="login.html" class="btn-logout">Logout</a>
             </div>
         </div>
 
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">💳</div>
+                <div class="stat-label">Total Subscriptions</div>
+                <div class="stat-value">12</div>
+                <div class="stat-change">+2 this month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-label">Monthly Spending</div>
+                <div class="stat-value">$247</div>
+                <div class="stat-change">+$15 from last month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-label">Yearly Total</div>
+                <div class="stat-value">$2,964</div>
+                <div class="stat-change">Projected savings: $380</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⚠️</div>
+                <div class="stat-label">Renewals Soon</div>
+                <div class="stat-value">3</div>
+                <div class="stat-change">Next: 5 days</div>
+            </div>
+        </div>
+
+        <div class="subscriptions-section">
+            <div class="section-header">
+                <h2>Active Subscriptions</h2>
+                <a href="add-subscription.html" class="btn-add">
+                    <span>+</span>
+                    <span>Add Subscription</span>
+                </a>
+            </div>
+
+            <div class="subscriptions-grid">
+                <div class="subscription-card">
+                    <div class="subscription-header">
+                        <div class="subscription-logo">N</div>
+                        <div class="subscription-status">Active</div>
+                    </div>
+                    <div class="subscription-name">Netflix</div>
+                    <div class="subscription-category">Entertainment</div>
+                    <div class="subscription-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Plan</span>
+                            <span class="detail-value">Premium</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Billing Cycle</span>
+                            <span class="detail-value">Monthly</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Next Renewal</span>
+                            <span class="detail-value">Dec 15, 2024</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Cost</span>
+                            <span class="detail-value price">$19.99</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="subscription-details.html" class="btn-edit">View Details</a>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="subscription-card">
+                    <div class="subscription-header">
+                        <div class="subscription-logo">S</div>
+                        <div class="subscription-status">Active</div>
+                    </div>
+                    <div class="subscription-name">Spotify</div>
+                    <div class="subscription-category">Music</div>
+                    <div class="subscription-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Plan</span>
+                            <span class="detail-value">Individual</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Billing Cycle</span>
+                            <span class="detail-value">Monthly</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Next Renewal</span>
+                            <span class="detail-value">Dec 22, 2024</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Cost</span>
+                            <span class="detail-value price">$10.99</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="subscription-details.html" class="btn-edit">View Details</a>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="subscription-card">
+                    <div class="subscription-header">
+                        <div class="subscription-logo">G</div>
+                        <div class="subscription-status">Active</div>
+                    </div>
+                    <div class="subscription-name">Google Drive</div>
+                    <div class="subscription-category">Cloud Storage</div>
+                    <div class="subscription-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Plan</span>
+                            <span class="detail-value">200GB</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Billing Cycle</span>
+                            <span class="detail-value">Monthly</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Next Renewal</span>
+                            <span class="detail-value">Jan 3, 2025</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Cost</span>
+                            <span class="detail-value price">$2.99</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="subscription-details.html" class="btn-edit">View Details</a>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="subscription-card">
+                    <div class="subscription-header">
+                        <div class="subscription-logo">A</div>
+                        <div class="subscription-status">Active</div>
+                    </div>
+                    <div class="subscription-name">Adobe Creative</div>
+                    <div class="subscription-category">Productivity</div>
+                    <div class="subscription-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Plan</span>
+                            <span class="detail-value">All Apps</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Billing Cycle</span>
+                            <span class="detail-value">Monthly</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Next Renewal</span>
+                            <span class="detail-value">Dec 28, 2024</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Cost</span>
+                            <span class="detail-value price">$54.99</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="subscription-details.html" class="btn-edit">View Details</a>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="subscription-card">
+                    <div class="subscription-header">
+                        <div class="subscription-logo">D</div>
+                        <div class="subscription-status">Active</div>
+                    </div>
+                    <div class="subscription-name">Dropbox</div>
+                    <div class="subscription-category">Cloud Storage</div>
+                    <div class="subscription-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Plan</span>
+                            <span class="detail-value">Plus</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Billing Cycle</span>
+                            <span class="detail-value">Yearly</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Next Renewal</span>
+                            <span class="detail-value">Aug 12, 2025</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Cost</span>
+                            <span class="detail-value price">$119.88</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="subscription-details.html" class="btn-edit">View Details</a>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="subscription-card">
+                    <div class="subscription-header">
+                        <div class="subscription-logo">Y</div>
+                        <div class="subscription-status">Active</div>
+                    </div>
+                    <div class="subscription-name">YouTube Premium</div>
+                    <div class="subscription-category">Entertainment</div>
+                    <div class="subscription-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Plan</span>
+                            <span class="detail-value">Individual</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Billing Cycle</span>
+                            <span class="detail-value">Monthly</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Next Renewal</span>
+                            <span class="detail-value">Dec 10, 2024</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Cost</span>
+                            <span class="detail-value price">$11.99</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="subscription-details.html" class="btn-edit">View Details</a>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-</div>
-
-<script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
